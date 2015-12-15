@@ -2,6 +2,7 @@ package net.andreu.ElPareNoelAlMonASCII;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.IOException;
 
 /**
  * El pare Noel al món ASCII
@@ -20,7 +21,7 @@ public class App {
 	}
 
 	public static void llegirFitxer() {
-		BufferedReader br;
+		BufferedReader br = null;
 		try {
 			br = new BufferedReader(new FileReader(arxiu));
 			String linia = br.readLine();
@@ -69,7 +70,13 @@ public class App {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-
+		}finally{
+			try {
+				br.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	}
 }
