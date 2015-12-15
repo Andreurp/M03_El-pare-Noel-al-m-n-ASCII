@@ -19,7 +19,7 @@ public class App {
 		llegirFitxer();
 	}
 
-	public static String llegirFitxer() {
+	public static void llegirFitxer() {
 		BufferedReader br;
 		try {
 			br = new BufferedReader(new FileReader(arxiu));
@@ -65,6 +65,5 @@ public class App {
 			e.printStackTrace();
 
 		}
-		return "";
 	}
 }
