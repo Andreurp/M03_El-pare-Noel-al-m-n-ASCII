@@ -28,27 +28,33 @@ public class App {
 			int n_ren=0;
 			int n_ajudants=0;
 			
+			//mentre hi hagi una linia segueix llegint
 			while (linia != null) {
 				n_pareNoel=0;
 				n_ren=0;
 				n_ajudants=0;
+				
 				System.out.println(linia);
 				int posicio= -1;
+				//si la linea conte un pare noel suma-li 1
 				do{
 					posicio=linia.indexOf(pareNoel, posicio+1);
 					if(posicio!=-1){
 						n_pareNoel++;
 					}
 				}while(posicio!=-1);
+				//si la linea conte un ren suma-li 1
 				do{
 					posicio=linia.indexOf(ren, posicio+1);
 					if(posicio!=-1){
 						n_ren++;
 					}
 				}while(posicio!=-1);
+				//si la linea conte un ajudant suma-li 1
 				do{
 					posicio=linia.indexOf(ajudants, posicio+1);
 					if(posicio!=-1){
+						//distigim entre pare noel i ajudants
 						if(posicio>0 && linia.indexOf(pareNoel, posicio-1)!=posicio-1){
 							n_ajudants++;
 						}
