@@ -17,10 +17,15 @@ public class App {
 	private static String arxiu="src/main/resources/visites.txt";
 
 	public static void main(String[] args) {
+		App a = new App();
+		a.inici();
+	}
+
+	public void inici() {
 		llegirFitxer();
 	}
 
-	public static void llegirFitxer() {
+	public void llegirFitxer() {
 		BufferedReader br = null;
 		try {
 			br = new BufferedReader(new FileReader(arxiu));
